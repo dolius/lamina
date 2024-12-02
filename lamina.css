@@ -1,0 +1,166 @@
+/* General styles */
+body { 
+  margin: 0; 
+  padding: 0; 
+  font-family: Arial, sans-serif; 
+  overflow: hidden; 
+}
+
+div { 
+  font-size: calc(1rem + 1.5vw); 
+  word-wrap: break-word; /* Ensures long text doesn't overflow */
+}
+
+h1 { 
+  font-size: calc(2rem + 4vw); 
+  line-height: 1.2; 
+  word-wrap: break-word; /* Prevent text leaks */
+}
+
+h2 { 
+  font-size: calc(1.5rem + 3vw); 
+}
+
+h3 { 
+  font-size: calc(1.2rem + 2.5vw); 
+}
+
+p, ul { 
+  font-size: calc(1rem + 1.5vw); 
+}
+
+a { 
+  color: cyan; 
+  font-weight: bold; 
+}
+
+a:hover { 
+  color: blue; 
+}
+
+#presentation { 
+  display: flex; 
+  flex-direction: column; 
+  height: 100vh; 
+  width: 100vw; 
+  overflow: hidden; /* Ensure nothing leaks outside the container */
+}
+
+.slide { 
+  padding: 80px; 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  box-sizing: border-box; /* Prevent padding from increasing the size of slides */
+  overflow: hidden; /* Ensures content doesn't overflow slides */
+  position: relative; /* Ensures absolute children stay within */
+}
+
+/* Slide-specific styles */
+.slide-basic { 
+  display: block; 
+  overflow: hidden; /* Contain content */ 
+}
+
+.slide-title { 
+  display: block; 
+  text-align: center; 
+  overflow: hidden; /* Contain content */
+}
+
+.slide-tower { 
+  display: block; 
+  overflow: hidden; 
+}
+
+.slide-split { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-gap: 20px; 
+  overflow: hidden; 
+}
+
+.slide-triad { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-gap: 20px; 
+  overflow: hidden; 
+}
+
+/* Utility styles */
+.dark { 
+  background: black; 
+  color: white; 
+}
+
+.light { 
+  background: whitesmoke; 
+  color: black; 
+}
+
+.neutral { 
+  background: gray; 
+  color: whitesmoke; 
+}
+
+.text-white { 
+  color: white; 
+}
+
+.text-center { 
+  text-align: center; 
+}
+
+.fit { 
+  width: 100%; 
+  height: auto; 
+  max-width: 100%; /* Prevent images from leaking horizontally */
+  max-height: 100%; /* Prevent images from leaking vertically */
+  object-fit: contain; /* Scale images proportionally within container */
+}
+
+/* Navigation styles */
+#navigation { 
+  position: fixed; 
+  bottom: 20px; 
+  width: 100%; 
+  display: flex; 
+  justify-content: space-between; 
+  padding: 0 20px; 
+  box-sizing: border-box; 
+}
+
+#navigation button { 
+  background: none; 
+  border: none; 
+  cursor: pointer; 
+  padding: 10px; 
+  outline: none; 
+}
+
+#navigation svg { 
+  fill: #333; 
+  transition: transform 0.2s ease; 
+}
+
+#navigation button:hover svg { 
+  transform: scale(1.2); 
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  h1 { font-size: calc(1.5rem + 3vw); }
+  h2 { font-size: calc(1.2rem + 2.5vw); }
+  h3 { font-size: calc(1rem + 2vw); }
+  p { font-size: calc(0.8rem + 1vw); }
+
+  .slide-split, .slide-triad {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column for mobile */
+    grid-gap: 15px;
+  }
+
+  .slide { 
+    padding: 40px; /* Adjust padding for smaller screens */
+  }
+}
