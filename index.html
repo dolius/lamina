@@ -6,225 +6,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lamina Documentation</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axist/dist/axist.min.css">
-<style>
-  body {
-    padding: 0;
-    margin: 0;
-    font-family: "Archivo", sans-serif;
-    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
-    color: white;
-  }
-
-  .grid-container {
-    display: grid;
-    grid-template-areas:
-      'id1 id1 id2 id2 id2'
-      'id3 id4 id4 id5 id5'
-      'id3 id6 id7 id7 id7';
-    gap: 10px;
-    height: 100vh;
-    width: 100vw;
-    margin: 5px;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  #id1 { grid-area: id1; }
-  #id2 { grid-area: id2; }
-  #id3 { grid-area: id3; }
-  #id4 { grid-area: id4; }
-  #id5 { grid-area: id5; }
-  #id6 { grid-area: id6; }
-  #id7 { grid-area: id7; }
-
-  .grid-item {
-    border-radius: 15px;
-    padding: 20px;
-    text-align: left;
-    font-size: 36px; /* Doubled default size */
-  }
-
-  h1 {
-    font-size: 6rem; /* Doubled original 4.441rem */
-    letter-spacing: -0.24rem; /* Adjust for larger size */
-    line-height: 1.2;
-  }
-
-  h2 {
-    font-size: 5rem; /* Doubled original 4.441rem */
-    letter-spacing: -0.24rem;
-    line-height: 1.2;
-  }
-
-  h3 {
-    font-size: 3rem; /* Doubled original size (2.829rem assumed for example) */
-    letter-spacing: -0.12rem;
-    line-height: 1.3;
-  }
-
-  p {
-    font-size: 2.4rem; /* Doubled original size (1.2rem assumed for example) */
-    line-height: 1.5;
-  }
-
-  pre {
-    background: #f4f4f4;
-    padding: 10px;
-    border-left: 5px solid white;
-    overflow-x: auto;
-    font-size: 1.6rem; /* Doubled original 0.8rem */
-  }
-
-  code {
-    font-family: monospace;
-    color: #d6336c;
-    font-size: 1.6rem; /* Doubled original 0.8rem */
-  }
-
-  a {
-    color: #007bff;
-    font-size: 2rem; /* Doubled original 1rem */
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-  }
-
-  .section {
-    margin-bottom: 40px;
-  }
-
-  .bg-light {
-    background: #f9f9f9;
-  }
-
-  .bg-dark {
-    background: #222;
-    color: #fff;
-  }
-
-  .text-center {
-    text-align: center;
-  }
-
-  .text-white {
-    color: #fff;
-  }
-
-  .btn {
-    padding: 20px 40px; /* Adjust button size */
-    margin: 10px 0;
-    border: none;
-    background: #007bff;
-    color: white;
-    cursor: pointer;
-    font-size: 2.4rem; /* Doubled original 1.2rem */
-  }
-
-  .btn:hover {
-    background: #0056b3;
-  }
-
-  @media (max-width: 767px) {
-    .grid-container {
-      grid-template-areas:
-        'id1'
-        'id2'
-        'id3'
-        'id4'
-        'id5'
-        'id6'
-        'id7';
-      grid-template-columns: 1fr;
-      height: auto;
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      font-family: "Archivo", sans-serif;
+      background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+      color: white;
     }
-  }
-</style>
 
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-left: 5px solid white;
+      overflow-x: auto;
+      font-size: 1.2rem;
+    }
+
+    code {
+      font-family: monospace;
+      color: #d6336c;
+    }
+
+    a {
+      color: #007bff;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .bg-dark {
+      background: #222;
+      color: #fff;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin: 10px 0;
+      border: none;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+  </style>
 </head>
 
 <body>
-  <header class="bg-dark text-center">
-    <h1>lamina</h1>
+  <header class="bg-dark">
+    <h1>Lamina</h1>
     <p>Your ultimate HTML presentation framework. PowerPoint who? 😎</p>
   </header>
 
   <main class="container">
-    <!-- Section: What is Lamina -->
+    <!-- Getting Started Section -->
     <div class="section">
-      <h2>What is Lamina?</h2>
-      <a href="demo.html">View demo</a>
-      <p>Lamina is a lightweight, web-based presentation framework. Build your slides using HTML, CSS, and JavaScript, and run them in any modern browser. It’s customizable, responsive, and makes you look like a tech wizard. 🧙‍♂️</p>
-    </div>
-
-    <!-- Section: How to Use -->
-    <div class="section ">
-      <h2>How to Use Lamina</h2>
-      <p>Here’s how to get started:</p>
-      <ol>
-        <li>Include Lamina's CSS and JavaScript files:</li>
-        <pre><code>&lt;link rel="stylesheet" href="lamina.css"&gt;
-&lt;script src="lamina.js"&gt;&lt;/script&gt;</code></pre>
-        <li>Add your slides using <code>&lt;section&gt;</code> elements with the class <code>.slide</code>.</li>
-        <li>Style them using built-in classes like <code>.slide-title</code> or <code>.slide-triad</code>.</li>
-      </ol>
-    </div>
-
-    <!-- Section: Key Classes -->
-    <div class="section">
-      <h2>Key Classes</h2>
+      <h2>Getting Started</h2>
+      <p>To get started with Lamina, you can use the following options:</p>
+      <h3>Option 1: Use the CDN</h3>
+      <p>Include these links in your project to load Lamina's CSS and JavaScript:</p>
+      <pre><code>&lt;link rel="stylesheet" href="https://dolius.github.io/lamina/lamina.css"&gt;
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/your-lamina-version/lamina.js"&gt;&lt;/script&gt;</code></pre>
+      <h3>Option 2: Download the Files</h3>
+      <p>Clone or download the project directly from GitHub:</p>
       <ul>
-        <li><code>.slide</code>: The base class for every slide.</li>
-        <li><code>.slide-title</code>: A full-screen, centered title slide.</li>
-        <li><code>.slide-split</code>: A two-column layout for comparisons.</li>
-        <li><code>.slide-triad</code>: A three-column layout for balanced content.</li>
-        <li><code>.text-white</code>: Makes your text white (great for dark backgrounds).</li>
-        <li><code>.fit</code>: Ensures your images stay proportional and within bounds.</li>
+        <li><a href="https://github.com/dolius/lamina" target="_blank">GitHub Repository</a></li>
+        <li><a href="https://dolius.github.io/lamina/" target="_blank">Live Demo</a></li>
       </ul>
     </div>
 
-    <!-- Section: Examples -->
-    <div class="section ">
-      <h2>Examples</h2>
-      <h3>Title Slide</h3>
+    <!-- What is Lamina Section -->
+    <div class="section">
+      <h2>What is Lamina?</h2>
+      <p>Lamina is a lightweight, web-based presentation framework. Build your slides using HTML, CSS, and JavaScript, and run them in any modern browser. It’s customizable, responsive, and makes you look like a tech wizard. 🧙‍♂️</p>
+    </div>
+
+    <!-- How to Use Section -->
+    <div class="section">
+      <h2>How to Use Lamina</h2>
+      <p>Here’s how to get started:</p>
+      <ol>
+        <li>Add Lamina's CSS and JavaScript files to your project.</li>
+        <li>Create slides using <code>&lt;section&gt;</code> elements with the class <code>.slide</code>.</li>
+        <li>Style your slides using built-in classes like <code>.slide-title</code> or <code>.slide-triad</code>.</li>
+      </ol>
+      <p>Example:</p>
       <pre><code>&lt;section class="slide slide-title text-white"&gt;
   &lt;h1&gt;Welcome to Lamina&lt;/h1&gt;
   &lt;p&gt;The future of presentations is here.&lt;/p&gt;
 &lt;/section&gt;</code></pre>
-
-      <h3>Split Slide</h3>
-      <pre><code>&lt;section class="slide slide-split"&gt;
-  &lt;div&gt;
-    &lt;h2&gt;Left Side&lt;/h2&gt;
-    &lt;p&gt;Content for the left column.&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div&gt;
-    &lt;h2&gt;Right Side&lt;/h2&gt;
-    &lt;p&gt;Content for the right column.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/section&gt;</code></pre>
-
-      <h3>Triad Slide</h3>
-      <pre><code>&lt;section class="slide slide-triad"&gt;
-  &lt;div&gt;First Column&lt;/div&gt;
-  &lt;div&gt;Second Column&lt;/div&gt;
-  &lt;div&gt;Third Column&lt;/div&gt;
-&lt;/section&gt;</code></pre>
     </div>
 
-    <!-- Section: Why Lamina Rocks -->
+    <!-- Why Lamina Rocks Section -->
     <div class="section bg-dark text-center">
       <h2>Why Lamina Rocks</h2>
       <p>Say goodbye to bloated PowerPoint files and boring templates. With Lamina, your presentations are lightweight, responsive, and easy to maintain. Plus, it’s free. Forever. 🎉</p>
-
-      <h3>View source on demo and get going</h3>
-      <a href="demo.html">Get Started</a>
+      <a href="https://github.com/dolius/lamina" class="btn">View on GitHub</a>
+      <a href="https://dolius.github.io/lamina/" class="btn">Live Demo</a>
     </div>
   </main>
 
